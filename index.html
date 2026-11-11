@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>The PoSH Awareness Completion Assessment</title>
+
 <style>
 :root{--bg:#0f1110;--panel:#171a18;--panel2:#1f2421;--text:#f2efe8;--muted:#b7b2a8;--accent:#5fc0d3;--accent2:#84e08f;--border:#303633;--shadow:0 12px 30px rgba(0,0,0,.32);--max:1120px;font-family:Inter,system-ui,sans-serif}
 *{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at top,#1d2420,var(--bg) 52%);color:var(--text)}
@@ -20,50 +21,614 @@
 @media (max-width:700px){.hero{padding:24px} .card{padding:18px} .question{font-size:1.08rem}}
 </style>
 </head>
+
 <body>
 <div class="shell">
+
   <section class="hero">
     <h1>The PoSH Awareness Completion Assessment</h1>
     <p>A professional, high-clarity assessment built to evaluate understanding of respectful workplace conduct, reporting pathways, personal boundaries, and expected standards of behaviour.</p>
-    <div class="badges"><span class="badge">24 Questions</span><span class="badge">True / False</span><span class="badge">Single Choice</span><span class="badge">Multiple Select</span></div>
+
+    <div class="badges">
+      <span class="badge">10 Questions</span>
+      <span class="badge">Single Choice</span>
+      <span class="badge">Score out of 10</span>
+    </div>
   </section>
+
   <section class="toolbar">
-    <div class="pill"><span id="answeredCount">0</span> / 24 checked</div>
-    <div class="progress" aria-hidden="true"><div class="bar" id="progressBar"></div></div>
-    <div class="pill">Score: <span id="scoreCount">0</span></div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap"><button type="button" class="btn btn-primary" id="submitAll">Finalize score</button><button type="button" class="btn btn-secondary" id="resetAll">Reset assessment</button></div>
+    <div class="pill">
+      <span id="answeredCount">0</span> / 10 checked
+    </div>
+
+    <div class="progress" aria-hidden="true">
+      <div class="bar" id="progressBar"></div>
+    </div>
+
+    <div class="pill">
+      Score: <span id="scoreCount">0</span>
+    </div>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button type="button" class="btn btn-primary" id="submitAll">
+        Finalize score
+      </button>
+      <button type="button" class="btn btn-secondary" id="resetAll">
+        Reset assessment
+      </button>
+    </div>
   </section>
+
   <main>
-<article class="card question-card" data-question-id="1" data-correct="0"><div class="q-meta"><span class="q-number">Question 1</span><span class="q-type">True / False</span></div><h2 class="question">The PoSH Act is described as an institutional shield for every individual in the workplace.</h2><fieldset class="options"><legend class="sr-only">Question 1</legend><label class="option"><input type="radio" name="q1" value="0"><span>True</span></label><label class="option"><input type="radio" name="q1" value="1"><span>False</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="1">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="1">Clear</button><div class="feedback" aria-live="polite"></div></div><template>PoSH is presented as a shield for a safe workplace.</template></article><article class="card question-card" data-question-id="2" data-correct="1"><div class="q-meta"><span class="q-number">Question 2</span><span class="q-type">Single choice</span></div><h2 class="question">Which trio forms the primary PoSH responsibilities highlighted in the learning content?</h2><fieldset class="options"><legend class="sr-only">Question 2</legend><label class="option"><input type="radio" name="q2" value="0"><span>Prevention, Promotion, Punishment</span></label><label class="option"><input type="radio" name="q2" value="1"><span>Prevention, Prohibition, Redressal</span></label><label class="option"><input type="radio" name="q2" value="2"><span>Protection, Participation, Reform</span></label><label class="option"><input type="radio" name="q2" value="3"><span>Policy, Procedure, Penalty</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="2">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="2">Clear</button><div class="feedback" aria-live="polite"></div></div><template>The content centers PoSH on Prevention, Prohibition, and Redressal.</template></article><article class="card question-card" data-question-id="3" data-correct="2"><div class="q-meta"><span class="q-number">Question 3</span><span class="q-type">Single choice</span></div><h2 class="question">Under the extended workplace idea, which is covered?</h2><fieldset class="options"><legend class="sr-only">Question 3</legend><label class="option"><input type="radio" name="q3" value="0"><span>Only the main office premises</span></label><label class="option"><input type="radio" name="q3" value="1"><span>Only formal meetings inside office hours</span></label><label class="option"><input type="radio" name="q3" value="2"><span>Work-related physical, off-site, and virtual spaces</span></label><label class="option"><input type="radio" name="q3" value="3"><span>Only locations owned by the company</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="3">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="3">Clear</button><div class="feedback" aria-live="polite"></div></div><template>The learning content extends the workplace to physical, off-site, and virtual spaces.</template></article><article class="card question-card" data-question-id="4" data-correct="0,1,2"><div class="q-meta"><span class="q-number">Question 4</span><span class="q-type">Multiple select</span></div><h2 class="question">Select all settings the learning content identifies as part of the workplace under PoSH.</h2><fieldset class="options"><legend class="sr-only">Question 4</legend><label class="option"><input type="checkbox" name="q4" value="0"><span>Parking lots and cafeterias</span></label><label class="option"><input type="checkbox" name="q4" value="1"><span>Official WhatsApp groups</span></label><label class="option"><input type="checkbox" name="q4" value="2"><span>Client sites and team dinners</span></label><label class="option"><input type="checkbox" name="q4" value="3"><span>Only annual townhalls</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="4">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="4">Clear</button><div class="feedback" aria-live="polite"></div></div><template>The learning content names support areas, off-site contexts, and digital spaces as covered settings.</template></article><article class="card question-card" data-question-id="5" data-correct="2"><div class="q-meta"><span class="q-number">Question 5</span><span class="q-type">Single choice</span></div><h2 class="question">Who is covered according to the learning content?</h2><fieldset class="options"><legend class="sr-only">Question 5</legend><label class="option"><input type="radio" name="q5" value="0"><span>Only permanent employees</span></label><label class="option"><input type="radio" name="q5" value="1"><span>Only women employees</span></label><label class="option"><input type="radio" name="q5" value="2"><span>Employees, interns, temporary staff, vendors, consultants, support staff, and others connected to the workplace</span></label><label class="option"><input type="radio" name="q5" value="3"><span>Only managerial staff</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="5">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="5">Clear</button><div class="feedback" aria-live="polite"></div></div><template>The learning content lists a broad range of covered persons connected to the workplace.</template></article><article class="card question-card" data-question-id="6" data-correct="1"><div class="q-meta"><span class="q-number">Question 6</span><span class="q-type">True / False</span></div><h2 class="question">Intent matters more than impact when assessing workplace conduct.</h2><fieldset class="options"><legend class="sr-only">Question 6</legend><label class="option"><input type="radio" name="q6" value="0"><span>True</span></label><label class="option"><input type="radio" name="q6" value="1"><span>False</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="6">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="6">Clear</button><div class="feedback" aria-live="polite"></div></div><template>The learning content emphasizes impact on others, not hidden intention.</template></article><article class="card question-card" data-question-id="7" data-correct="0"><div class="q-meta"><span class="q-number">Question 7</span><span class="q-type">Single choice</span></div><h2 class="question">Which three qualities describe the mindset expected under PoSH?</h2><fieldset class="options"><legend class="sr-only">Question 7</legend><label class="option"><input type="radio" name="q7" value="0"><span>Balance, Steadiness, and Steadfastness</span></label><label class="option"><input type="radio" name="q7" value="1"><span>Speed, Assertiveness, and Independence</span></label><label class="option"><input type="radio" name="q7" value="2"><span>Confidence, Ambition, and Influence</span></label><label class="option"><input type="radio" name="q7" value="3"><span>Humor, Familiarity, and Informality</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="7">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="7">Clear</button><div class="feedback" aria-live="polite"></div></div><template>The learning content uses Balance, Steadiness, and Steadfastness to describe the expected mindset.</template></article><article class="card question-card" data-question-id="8" data-correct="1"><div class="q-meta"><span class="q-number">Question 8</span><span class="q-type">Single choice</span></div><h2 class="question">Which example reflects objectifying a coworker?</h2><fieldset class="options"><legend class="sr-only">Question 8</legend><label class="option"><input type="radio" name="q8" value="0"><span>Asking for project status in a review meeting</span></label><label class="option"><input type="radio" name="q8" value="1"><span>Commenting on how a colleague’s clothes fit their physical attributes</span></label><label class="option"><input type="radio" name="q8" value="2"><span>Praising a teammate’s presentation structure</span></label><label class="option"><input type="radio" name="q8" value="3"><span>Assigning work based on skill fit</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="8">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="8">Clear</button><div class="feedback" aria-live="polite"></div></div><template>The learning content identifies comments about clothing fit and physical attributes as inappropriate.</template></article><article class="card question-card" data-question-id="9" data-correct="1"><div class="q-meta"><span class="q-number">Question 9</span><span class="q-type">True / False</span></div><h2 class="question">A sexually charged joke is acceptable if the speaker believes it is harmless.</h2><fieldset class="options"><legend class="sr-only">Question 9</legend><label class="option"><input type="radio" name="q9" value="0"><span>True</span></label><label class="option"><input type="radio" name="q9" value="1"><span>False</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="9">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="9">Clear</button><div class="feedback" aria-live="polite"></div></div><template>If conduct causes discomfort, the boundary has been crossed regardless of intent.</template></article><article class="card question-card" data-question-id="10" data-correct="1"><div class="q-meta"><span class="q-number">Question 10</span><span class="q-type">Single choice</span></div><h2 class="question">Which situation most clearly reflects a quid pro quo concern?</h2><fieldset class="options"><legend class="sr-only">Question 10</legend><label class="option"><input type="radio" name="q10" value="0"><span>Scheduling a performance review</span></label><label class="option"><input type="radio" name="q10" value="1"><span>Saying “If you’re nice to me, I’ll make sure you get the best projects”</span></label><label class="option"><input type="radio" name="q10" value="2"><span>Requesting a written weekly update</span></label><label class="option"><input type="radio" name="q10" value="3"><span>Offering mentoring support during onboarding</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="10">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="10">Clear</button><div class="feedback" aria-live="polite"></div></div><template>The learning content uses this example to show a benefit tied to conduct with a sexual undertone.</template></article><article class="card question-card" data-question-id="11" data-correct="0,1,2"><div class="q-meta"><span class="q-number">Question 11</span><span class="q-type">Multiple select</span></div><h2 class="question">Which are presented as unacceptable behaviours?</h2><fieldset class="options"><legend class="sr-only">Question 11</legend><label class="option"><input type="checkbox" name="q11" value="0"><span>Acts of retribution after rejection</span></label><label class="option"><input type="checkbox" name="q11" value="1"><span>Lingering physical contact disguised as support</span></label><label class="option"><input type="checkbox" name="q11" value="2"><span>Repeated late-night personal probing under the pretext of work</span></label><label class="option"><input type="checkbox" name="q11" value="3"><span>Documented performance coaching delivered respectfully</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="11">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="11">Clear</button><div class="feedback" aria-live="polite"></div></div><template>The learning content explicitly rejects retribution, unwelcome contact, and intrusive probing.</template></article><article class="card question-card" data-question-id="12" data-correct="2"><div class="q-meta"><span class="q-number">Question 12</span><span class="q-type">Single choice</span></div><h2 class="question">Which option correctly defines the five pillars of the ARROW framework for workplace propriety and POSH compliance?</h2><fieldset class="options"><legend class="sr-only">Question 12</legend><label class="option"><input type="radio" name="q12" value="0"><span>Awareness, Respect, Reliability, Oversight, Welfare</span></label><label class="option"><input type="radio" name="q12" value="1"><span>Accountability, Regard, Responsibility, Obligation, Wellness</span></label><label class="option"><input type="radio" name="q12" value="2"><span>Acceptance, Respect, Responsibility, Ownership, Wellbeing</span></label><label class="option"><input type="radio" name="q12" value="3"><span>Acceptance, Reciprocity, Regulation, Ownership, Workforce</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="12">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="12">Clear</button><div class="feedback" aria-live="polite"></div></div><template>The ARROW framework targets specific, behavioral actions.</template></article><article class="card question-card" data-question-id="13" data-correct="1"><div class="q-meta"><span class="q-number">Question 13</span><span class="q-type">Single choice</span></div><h2 class="question">Before discussing personal matters, what should be considered first?</h2><fieldset class="options"><legend class="sr-only">Question 13</legend><label class="option"><input type="radio" name="q13" value="0"><span>Cultural familiarity alone</span></label><label class="option"><input type="radio" name="q13" value="1"><span>The time, place, and the other person’s willingness</span></label><label class="option"><input type="radio" name="q13" value="2"><span>Seniority in the organization</span></label><label class="option"><input type="radio" name="q13" value="3"><span>Whether others are asking similar questions</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="13">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="13">Clear</button><div class="feedback" aria-live="polite"></div></div><template>The learning content stresses time, place, and willingness before broaching personal subjects.</template></article><article class="card question-card" data-question-id="14" data-correct="0"><div class="q-meta"><span class="q-number">Question 14</span><span class="q-type">True / False</span></div><h2 class="question">If you sense discomfort, the recommended response is to back away from the topic.</h2><fieldset class="options"><legend class="sr-only">Question 14</legend><label class="option"><input type="radio" name="q14" value="0"><span>True</span></label><label class="option"><input type="radio" name="q14" value="1"><span>False</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="14">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="14">Clear</button><div class="feedback" aria-live="polite"></div></div><template>The learning content advises stepping back at the slightest sign of discomfort.</template></article><article class="card question-card" data-question-id="15" data-correct="1"><div class="q-meta"><span class="q-number">Question 15</span><span class="q-type">Single choice</span></div><h2 class="question">What is the key message about silence when someone faces harassment?</h2><fieldset class="options"><legend class="sr-only">Question 15</legend><label class="option"><input type="radio" name="q15" value="0"><span>Silence is the safest neutral option</span></label><label class="option"><input type="radio" name="q15" value="1"><span>Silence may encourage repetition of the behaviour</span></label><label class="option"><input type="radio" name="q15" value="2"><span>Silence is preferred until annual review time</span></label><label class="option"><input type="radio" name="q15" value="3"><span>Silence is necessary before approaching HR</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="15">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="15">Clear</button><div class="feedback" aria-live="polite"></div></div><template>The learning content states that silence is not neutral and may encourage repetition.</template></article><article class="card question-card" data-question-id="16" data-correct="0,1,2,3"><div class="q-meta"><span class="q-number">Question 16</span><span class="q-type">Multiple select</span></div><h2 class="question">What can a person do if they are the target of harassment?</h2><fieldset class="options"><legend class="sr-only">Question 16</legend><label class="option"><input type="checkbox" name="q16" value="0"><span>Confront and assert that the conduct is unwelcome</span></label><label class="option"><input type="checkbox" name="q16" value="1"><span>Report to a manager, mentor, or trusted go-to person</span></label><label class="option"><input type="checkbox" name="q16" value="2"><span>Contact HR</span></label><label class="option"><input type="checkbox" name="q16" value="3"><span>Approach the Internal Committee directly</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="16">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="16">Clear</button><div class="feedback" aria-live="polite"></div></div><template>The learning content presents all four action paths as valid responses.</template></article><article class="card question-card" data-question-id="17" data-correct="1"><div class="q-meta"><span class="q-number">Question 17</span><span class="q-type">Single choice</span></div><h2 class="question">How is the Internal Committee characterized?</h2><fieldset class="options"><legend class="sr-only">Question 17</legend><label class="option"><input type="radio" name="q17" value="0"><span>An informal peer-support circle only</span></label><label class="option"><input type="radio" name="q17" value="1"><span>A neutral, statutory body for formal and secure redressal</span></label><label class="option"><input type="radio" name="q17" value="2"><span>A body that only managers can approach</span></label><label class="option"><input type="radio" name="q17" value="3"><span>A temporary panel formed only after media attention</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="17">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="17">Clear</button><div class="feedback" aria-live="polite"></div></div><template>The learning content describes the Internal Committee as a neutral, statutory redressal body.</template></article><article class="card question-card" data-question-id="18" data-correct="1"><div class="q-meta"><span class="q-number">Question 18</span><span class="q-type">Single choice</span></div><h2 class="question">What is the typical comfortable collaborative zone in one-on-one interactions?</h2><fieldset class="options"><legend class="sr-only">Question 18</legend><label class="option"><input type="radio" name="q18" value="0"><span>6 to 8 inches</span></label><label class="option"><input type="radio" name="q18" value="1"><span>1.5 to 2.5 feet</span></label><label class="option"><input type="radio" name="q18" value="2"><span>4 to 5 feet only</span></label><label class="option"><input type="radio" name="q18" value="3"><span>There is no suggested range at all</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="18">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="18">Clear</button><div class="feedback" aria-live="polite"></div></div><template>The learning content gives 1.5 to 2.5 feet as a comfortable collaborative distance.</template></article><article class="card question-card" data-question-id="19" data-correct="1"><div class="q-meta"><span class="q-number">Question 19</span><span class="q-type">True / False</span></div><h2 class="question">At a colleague’s desk, standing over their shoulder is preferred over sitting beside them.</h2><fieldset class="options"><legend class="sr-only">Question 19</legend><label class="option"><input type="radio" name="q19" value="0"><span>True</span></label><label class="option"><input type="radio" name="q19" value="1"><span>False</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="19">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="19">Clear</button><div class="feedback" aria-live="polite"></div></div><template>The learning content recommends sitting beside the colleague rather than looming over them.</template></article><article class="card question-card" data-question-id="20" data-correct="1"><div class="q-meta"><span class="q-number">Question 20</span><span class="q-type">Single choice</span></div><h2 class="question">What does the learning content say about physical contact at work?</h2><fieldset class="options"><legend class="sr-only">Question 20</legend><label class="option"><input type="radio" name="q20" value="0"><span>It is acceptable whenever the intention is supportive</span></label><label class="option"><input type="radio" name="q20" value="1"><span>It requires a higher standard of clear and explicit consent</span></label><label class="option"><input type="radio" name="q20" value="2"><span>It is always acceptable between teammates</span></label><label class="option"><input type="radio" name="q20" value="3"><span>It should never be discussed</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="20">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="20">Clear</button><div class="feedback" aria-live="polite"></div></div><template>The learning content says physical contact requires clear and explicit consent.</template></article><article class="card question-card" data-question-id="21" data-correct="0,1,3"><div class="q-meta"><span class="q-number">Question 21</span><span class="q-type">Multiple select</span></div><h2 class="question">Which examples are considered intrusive digital conduct?</h2><fieldset class="options"><legend class="sr-only">Question 21</legend><label class="option"><input type="checkbox" name="q21" value="0"><span>Repeated pings and follow-up question marks</span></label><label class="option"><input type="checkbox" name="q21" value="1"><span>Unplanned calls for non-urgent matters</span></label><label class="option"><input type="checkbox" name="q21" value="2"><span>Sending one clear contextualized message</span></label><label class="option"><input type="checkbox" name="q21" value="3"><span>Pushing an expectation of instant reply</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="21">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="21">Clear</button><div class="feedback" aria-live="polite"></div></div><template>The learning content identifies repeated pings, unplanned calls, and instant-reply pressure as problematic.</template></article><article class="card question-card" data-question-id="22" data-correct="0"><div class="q-meta"><span class="q-number">Question 22</span><span class="q-type">Single choice</span></div><h2 class="question">Which is a silent signal of discomfort?</h2><fieldset class="options"><legend class="sr-only">Question 22</legend><label class="option"><input type="radio" name="q22" value="0"><span>Leaning away and reducing eye contact</span></label><label class="option"><input type="radio" name="q22" value="1"><span>Speaking more enthusiastically</span></label><label class="option"><input type="radio" name="q22" value="2"><span>Volunteering for extra work</span></label><label class="option"><input type="radio" name="q22" value="3"><span>Sharing more personal information</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="22">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="22">Clear</button><div class="feedback" aria-live="polite"></div></div><template>The learning content includes leaning away and reduced eye contact as discomfort cues.</template></article><article class="card question-card" data-question-id="24b" data-correct="0">
-  <div class="q-meta"><span class="q-number">Question 23</span><span class="q-type">True / False</span></div>
-  <h2 class="question">The Internal Committee is a neutral body that supports formal and secure redressal.</h2>
-  <fieldset class="options"><legend class="sr-only">Question 23</legend>
-    <label class="option"><input type="radio" name="q24b" value="0"><span>True</span></label>
-    <label class="option"><input type="radio" name="q24b" value="1"><span>False</span></label>
-  </fieldset>
-  <div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="23b">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="24b">Clear</button><div class="feedback" aria-live="polite"></div></div>
-  <template>The learning content describes the Internal Committee as a neutral body for formal and secure redressal.</template>
-</article><article class="card question-card" data-question-id="24" data-correct="0"><div class="q-meta"><span class="q-number">Question 24</span><span class="q-type">True / False</span></div><h2 class="question">Consistency in conduct builds trust, especially when things go wrong.</h2><fieldset class="options"><legend class="sr-only">Question 24</legend><label class="option"><input type="radio" name="q25" value="0"><span>True</span></label><label class="option"><input type="radio" name="q24" value="1"><span>False</span></label></fieldset><div class="feedback-row"><button type="button" class="btn btn-primary check-btn" data-question-id="24">Check Answer</button><button type="button" class="btn btn-secondary reset-btn" data-question-id="24">Clear</button><div class="feedback" aria-live="polite"></div></div><template>The learning content states that people trust predictable, appropriate conduct under pressure.</template></article></main>
-<div class="result"><aside class="result-box" id="resultBox"><div style="font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:800">Assessment result</div><div class="score" id="finalScore">0 / 24</div><div class="tiny" id="finalRemark">Check each question to view your final score.</div></aside></div>
+
+    <article class="card question-card" data-question-id="1" data-correct="0">
+      <div class="q-meta">
+        <span class="q-number">Question 1</span>
+        <span class="q-type">Single choice</span>
+      </div>
+
+      <h2 class="question">What is a common misconception about sexual harassment in the workplace?</h2>
+
+      <fieldset class="options">
+        <legend class="sr-only">Question 1</legend>
+        <label class="option">
+          <input type="radio" name="q1" value="0">
+          <span>It can only happen to women</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q1" value="1">
+          <span>It can happen to anyone, regardless of gender</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q1" value="2">
+          <span>It can create a hostile work environment</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q1" value="3">
+          <span>Organizations are responsible for preventing it</span>
+        </label>
+      </fieldset>
+
+      <div class="feedback-row">
+        <button type="button" class="btn btn-primary check-btn" data-question-id="1">Check Answer</button>
+        <button type="button" class="btn btn-secondary reset-btn" data-question-id="1">Clear</button>
+        <div class="feedback" aria-live="polite"></div>
+      </div>
+
+      <template class="correct-feedback"><strong>Correct,</strong> this is a common misconception. Sexual harassment can affect anyone, regardless of gender.</template>
+      <template class="incorrect-feedback"><strong>Not Quite.</strong> This isn’t a common misconception but a fact. Sexual harassment can affect anyone, regardless of gender.</template>
+    </article>
+
+    <article class="card question-card" data-question-id="2" data-correct="2">
+      <div class="q-meta">
+        <span class="q-number">Question 2</span>
+        <span class="q-type">Single choice</span>
+      </div>
+
+      <h2 class="question">How does sexual harassment impact the victim?</h2>
+
+      <fieldset class="options">
+        <legend class="sr-only">Question 2</legend>
+        <label class="option">
+          <input type="radio" name="q2" value="0">
+          <span>Improves job performance</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q2" value="1">
+          <span>Increases job satisfaction</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q2" value="2">
+          <span>Causes emotional distress and decreased productivity</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q2" value="3">
+          <span>Results in higher engagement at work</span>
+        </label>
+      </fieldset>
+
+      <div class="feedback-row">
+        <button type="button" class="btn btn-primary check-btn" data-question-id="2">Check Answer</button>
+        <button type="button" class="btn btn-secondary reset-btn" data-question-id="2">Clear</button>
+        <div class="feedback" aria-live="polite"></div>
+      </div>
+
+      <template>Sexual harassment can cause emotional distress and reduce productivity.</template>
+    </article>
+
+    <article class="card question-card" data-question-id="3" data-correct="1">
+      <div class="q-meta">
+        <span class="q-number">Question 3</span>
+        <span class="q-type">Single choice</span>
+      </div>
+
+      <h2 class="question">What is the role of a bystander in preventing sexual harassment?</h2>
+
+      <fieldset class="options">
+        <legend class="sr-only">Question 3</legend>
+        <label class="option">
+          <input type="radio" name="q3" value="0">
+          <span>To remain neutral and not get involved</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q3" value="1">
+          <span>To support the victim and report the harassment</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q3" value="2">
+          <span>To encourage the harasser</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q3" value="3">
+          <span>To spread rumours about the incident</span>
+        </label>
+      </fieldset>
+
+      <div class="feedback-row">
+        <button type="button" class="btn btn-primary check-btn" data-question-id="3">Check Answer</button>
+        <button type="button" class="btn btn-secondary reset-btn" data-question-id="3">Clear</button>
+        <div class="feedback" aria-live="polite"></div>
+      </div>
+
+      <template>Bystanders should support the person affected and report harassment through appropriate channels.</template>
+    </article>
+
+    <article class="card question-card" data-question-id="4" data-correct="2">
+      <div class="q-meta">
+        <span class="q-number">Question 4</span>
+        <span class="q-type">Single choice</span>
+      </div>
+
+      <h2 class="question">Which of the following is a key element in the POSH Act’s definition of sexual harassment?</h2>
+
+      <fieldset class="options">
+        <legend class="sr-only">Question 4</legend>
+        <label class="option">
+          <input type="radio" name="q4" value="0">
+          <span>Mutual agreement</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q4" value="1">
+          <span>Professional behaviour</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q4" value="2">
+          <span>Unwelcome behaviour</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q4" value="3">
+          <span>Friendly gestures</span>
+        </label>
+      </fieldset>
+
+      <div class="feedback-row">
+        <button type="button" class="btn btn-primary check-btn" data-question-id="4">Check Answer</button>
+        <button type="button" class="btn btn-secondary reset-btn" data-question-id="4">Clear</button>
+        <div class="feedback" aria-live="polite"></div>
+      </div>
+
+      <template>Unwelcome behaviour is a central element in the PoSH Act’s definition of sexual harassment.</template>
+    </article>
+
+    <article class="card question-card" data-question-id="5" data-correct="1">
+      <div class="q-meta">
+        <span class="q-number">Question 5</span>
+        <span class="q-type">Single choice</span>
+      </div>
+
+      <h2 class="question">Can a single incident be considered sexual harassment, or does it have to be repeated behaviour?</h2>
+
+      <fieldset class="options">
+        <legend class="sr-only">Question 5</legend>
+        <label class="option">
+          <input type="radio" name="q5" value="0">
+          <span>Only repeated behaviour can be considered harassment</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q5" value="1">
+          <span>A single incident can be considered harassment if it is unwelcome</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q5" value="2">
+          <span>It is not considered harassment unless it happens multiple times</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q5" value="3">
+          <span>Only if it happens over a long period</span>
+        </label>
+      </fieldset>
+
+      <div class="feedback-row">
+        <button type="button" class="btn btn-primary check-btn" data-question-id="5">Check Answer</button>
+        <button type="button" class="btn btn-secondary reset-btn" data-question-id="5">Clear</button>
+        <div class="feedback" aria-live="polite"></div>
+      </div>
+
+      <template>A single unwelcome incident can amount to sexual harassment; repetition is not required.</template>
+    </article>
+
+    <article class="card question-card" data-question-id="6" data-correct="1">
+      <div class="q-meta">
+        <span class="q-number">Question 6</span>
+        <span class="q-type">Single choice</span>
+      </div>
+
+      <h2 class="question">Which of the following behaviours is NOT considered sexual harassment?</h2>
+
+      <fieldset class="options">
+        <legend class="sr-only">Question 6</legend>
+        <label class="option">
+          <input type="radio" name="q6" value="0">
+          <span>Unwelcome touching or physical contact</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q6" value="1">
+          <span>Consensual relationships between colleagues</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q6" value="2">
+          <span>Making sexually loaded comments about someone’s appearance</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q6" value="3">
+          <span>Repeatedly asking someone out after they have declined</span>
+        </label>
+      </fieldset>
+
+      <div class="feedback-row">
+        <button type="button" class="btn btn-primary check-btn" data-question-id="6">Check Answer</button>
+        <button type="button" class="btn btn-secondary reset-btn" data-question-id="6">Clear</button>
+        <div class="feedback" aria-live="polite"></div>
+      </div>
+
+      <template class="correct-feedback"><strong>Correct,</strong> consensual relationship between colleagues is not considered sexual harassment.</template>
+      <template class="incorrect-feedback"><strong>Wrong.</strong> This is an act of sexual harassment.</template>
+    </article>
+
+    <article class="card question-card" data-question-id="7" data-correct="1">
+      <div class="q-meta">
+        <span class="q-number">Question 7</span>
+        <span class="q-type">Single choice</span>
+      </div>
+
+      <h2 class="question">What can employees do to help create a harassment-free workplace?</h2>
+
+      <fieldset class="options">
+        <legend class="sr-only">Question 7</legend>
+        <label class="option">
+          <input type="radio" name="q7" value="0">
+          <span>Participate in gossip and rumours</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q7" value="1">
+          <span>Report any incidents or suspicious behaviour</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q7" value="2">
+          <span>Avoid interacting with colleagues</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q7" value="3">
+          <span>Focus only on their own work</span>
+        </label>
+      </fieldset>
+
+      <div class="feedback-row">
+        <button type="button" class="btn btn-primary check-btn" data-question-id="7">Check Answer</button>
+        <button type="button" class="btn btn-secondary reset-btn" data-question-id="7">Clear</button>
+        <div class="feedback" aria-live="polite"></div>
+      </div>
+
+      <template>Employees help create a safer workplace by reporting incidents or concerning behaviour through appropriate channels.</template>
+    </article>
+
+    <article class="card question-card" data-question-id="8" data-correct="1">
+      <div class="q-meta">
+        <span class="q-number">Question 8</span>
+        <span class="q-type">Single choice</span>
+      </div>
+
+      <h2 class="question">Can the POSH Committee accept anonymous complaints, where the complainant does not disclose their identity?</h2>
+
+      <fieldset class="options">
+        <legend class="sr-only">Question 8</legend>
+        <label class="option">
+          <input type="radio" name="q8" value="0">
+          <span>Yes</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q8" value="1">
+          <span>No</span>
+        </label>
+      </fieldset>
+
+      <div class="feedback-row">
+        <button type="button" class="btn btn-primary check-btn" data-question-id="8">Check Answer</button>
+        <button type="button" class="btn btn-secondary reset-btn" data-question-id="8">Clear</button>
+        <div class="feedback" aria-live="polite"></div>
+      </div>
+
+      <template>The Internal Committee generally cannot conduct an inquiry into an anonymous or pseudonymous complaint because the complainant’s identity is required for the formal process.</template>
+    </article>
+
+    <article class="card question-card" data-question-id="9" data-correct="1">
+      <div class="q-meta">
+        <span class="q-number">Question 9</span>
+        <span class="q-type">Single choice</span>
+      </div>
+
+      <h2 class="question">Which example reflects objectifying a coworker?</h2>
+
+      <fieldset class="options">
+        <legend class="sr-only">Question 9</legend>
+        <label class="option">
+          <input type="radio" name="q9" value="0">
+          <span>Asking for project status in a review meeting</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q9" value="1">
+          <span>Commenting on how a colleague’s clothes fit their physical attributes</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q9" value="2">
+          <span>Praising a teammate’s presentation structure</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q9" value="3">
+          <span>Assigning work based on skill fit</span>
+        </label>
+      </fieldset>
+
+      <div class="feedback-row">
+        <button type="button" class="btn btn-primary check-btn" data-question-id="9">Check Answer</button>
+        <button type="button" class="btn btn-secondary reset-btn" data-question-id="9">Clear</button>
+        <div class="feedback" aria-live="polite"></div>
+      </div>
+
+      <template>Comments about clothing fit and physical attributes can objectify a coworker and are inappropriate.</template>
+    </article>
+
+    <article class="card question-card" data-question-id="10" data-correct="0">
+      <div class="q-meta">
+        <span class="q-number">Question 10</span>
+        <span class="q-type">Single choice</span>
+      </div>
+
+      <h2 class="question">What is a silent signal of discomfort?</h2>
+
+      <fieldset class="options">
+        <legend class="sr-only">Question 10</legend>
+        <label class="option">
+          <input type="radio" name="q10" value="0">
+          <span>Leaning away and reducing eye contact</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q10" value="1">
+          <span>Speaking more enthusiastically</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q10" value="2">
+          <span>Volunteering for extra work</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="q10" value="3">
+          <span>Sharing more personal information</span>
+        </label>
+      </fieldset>
+
+      <div class="feedback-row">
+        <button type="button" class="btn btn-primary check-btn" data-question-id="10">Check Answer</button>
+        <button type="button" class="btn btn-secondary reset-btn" data-question-id="10">Clear</button>
+        <div class="feedback" aria-live="polite"></div>
+      </div>
+
+      <template>The learning content includes leaning away and reduced eye contact as silent signals of discomfort.</template>
+    </article>
+
+  </main>
+
+  <div class="result">
+    <aside class="result-box" id="resultBox">
+      <div style="font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:800">
+        Assessment result
+      </div>
+
+      <div class="score" id="finalScore">0 / 10</div>
+
+      <div class="tiny" id="finalRemark">
+        Check each question to view your final score.
+      </div>
+    </aside>
+  </div>
+
 </div>
+
 <script>
-(function(){
-const total=24; checked=new Map(), checkedQuestions=new Set();
-const answeredCount=document.getElementById('answeredCount'), scoreCount=document.getElementById('scoreCount'), progressBar=document.getElementById('progressBar'), resultBox=document.getElementById('resultBox'), finalScore=document.getElementById('finalScore'), finalRemark=document.getElementById('finalRemark');
-function arrEq(a,b){ if(a.length!==b.length) return false; for(let i=0;i<a.length;i++) if(a[i]!==b[i]) return false; return true; }
-function selections(card){ return [...card.querySelectorAll('input:checked')].map(i=>+i.value).sort((a,b)=>a-b); }
-function correct(card){ return card.dataset.correct.split(',').map(Number).sort((a,b)=>a-b); }
-function update(){ const answered=checkedQuestions.size, s=[...checked.values()].filter(Boolean).length; answeredCount.textContent=answered; scoreCount.textContent=s; progressBar.style.width=`${answered/total*100}%`; finalScore.textContent=`${s} / ${total}`; resultBox.classList.toggle('show', answered>0); finalRemark.textContent=answered===0?'Check each question to view your final score.':(answered<total?`${total-answered} question(s) still need validation.`:(s===total?'Outstanding. Every response is correct.':s>=20?'Strong completion. The core concepts appear well understood.':s>=15?'Good attempt. Review the feedback notes for a sharper grasp of the concepts.':'This needs review. Revisit the learning content and try again.')); }
-function mark(card, sel, cor){ card.querySelectorAll('.option').forEach((o,i)=>{ o.classList.toggle('correct', cor.includes(i)); o.classList.toggle('incorrect', sel.includes(i)&&!cor.includes(i)); }); }
-function check(card, btn){ const fb=card.querySelector('.feedback'), sel=selections(card), cor=correct(card), exp=card.querySelector('template').innerHTML; if(!sel.length){ fb.className='feedback show bad'; fb.textContent='Please select an answer before checking.'; return; } const ok=arrEq(sel, cor); mark(card, sel, cor); checked.set(+card.dataset.questionId, ok); checkedQuestions.add(+card.dataset.questionId); fb.className='feedback show ' + (ok ? 'good' : 'bad'); fb.innerHTML=(ok?'<strong>Correct.</strong> ':'<strong>Not quite.</strong> ')+exp; update(); }
-function clear(card){ card.querySelectorAll('input').forEach(i=>i.checked=false); card.querySelectorAll('.option').forEach(o=>o.classList.remove('correct','incorrect')); const fb=card.querySelector('.feedback'); fb.className='feedback'; fb.textContent=''; checked.delete(+card.dataset.questionId); checkedQuestions.delete(+card.dataset.questionId); update(); }
-document.querySelectorAll('.check-btn').forEach(btn=>btn.addEventListener('click',()=>check(btn.closest('.question-card'), btn)));
-document.querySelectorAll('.reset-btn').forEach(btn=>btn.addEventListener('click',()=>clear(btn.closest('.question-card'))));
-document.querySelectorAll('.question-card').forEach(card=>card.addEventListener('change',()=>{checked.delete(+card.dataset.questionId); update();}));
-document.getElementById('submitAll').addEventListener('click',()=>{ document.querySelectorAll('.question-card').forEach(card=>check(card, card.querySelector('.check-btn'))); resultBox.scrollIntoView({behavior:'smooth', block:'nearest'}); });
-document.getElementById('resetAll').addEventListener('click',()=>{ document.querySelectorAll('.question-card').forEach(clear); window.scrollTo({top:0,behavior:'smooth'}); });
-update();
+(function() {
+  const total = 10;
+  const checked = new Map();
+  const checkedQuestions = new Set();
+
+  const answeredCount = document.getElementById('answeredCount');
+  const scoreCount = document.getElementById('scoreCount');
+  const progressBar = document.getElementById('progressBar');
+  const resultBox = document.getElementById('resultBox');
+  const finalScore = document.getElementById('finalScore');
+  const finalRemark = document.getElementById('finalRemark');
+
+  function arrEq(a, b) {
+    if (a.length !== b.length) return false;
+
+    for (let i = 0; i < a.length; i++) {
+      if (a[i] !== b[i]) return false;
+    }
+
+    return true;
+  }
+
+  function selections(card) {
+    return [...card.querySelectorAll('input:checked')]
+      .map(input => Number(input.value))
+      .sort((a, b) => a - b);
+  }
+
+  function correct(card) {
+    return card.dataset.correct
+      .split(',')
+      .map(Number)
+      .sort((a, b) => a - b);
+  }
+
+  function update() {
+    const answered = checkedQuestions.size;
+    const score = [...checked.values()].filter(Boolean).length;
+
+    answeredCount.textContent = answered;
+    scoreCount.textContent = score;
+    progressBar.style.width = `${answered / total * 100}%`;
+    finalScore.textContent = `${score} / ${total}`;
+    resultBox.classList.toggle('show', answered > 0);
+
+    finalRemark.textContent =
+      answered === 0
+        ? 'Check each question to view your final score.'
+        : answered < total
+          ? `${total - answered} question(s) still need validation.`
+          : score === total
+            ? 'Outstanding. Every response is correct.'
+            : score >= 8
+              ? 'Strong completion. The core concepts appear well understood.'
+              : score >= 6
+                ? 'Good attempt. Review the feedback notes for a sharper grasp of the concepts.'
+                : 'This needs review. Revisit the learning content and try again.';
+  }
+
+  function mark(card, selected, answers) {
+    card.querySelectorAll('.option').forEach((option, index) => {
+      option.classList.toggle('correct', answers.includes(index));
+
+      option.classList.toggle(
+        'incorrect',
+        selected.includes(index) && !answers.includes(index)
+      );
+    });
+  }
+
+  function check(card) {
+    const feedback = card.querySelector('.feedback');
+    const selected = selections(card);
+    const answers = correct(card);
+
+    if (!selected.length) {
+      feedback.className = 'feedback show bad';
+      feedback.textContent = 'Please select an answer before checking.';
+      return;
+    }
+
+    const isCorrect = arrEq(selected, answers);
+    const questionId = Number(card.dataset.questionId);
+
+    mark(card, selected, answers);
+    checked.set(questionId, isCorrect);
+    checkedQuestions.add(questionId);
+
+    feedback.className = 'feedback show ' + (isCorrect ? 'good' : 'bad');
+
+    const customFeedback = card.querySelector(
+      isCorrect
+        ? 'template.correct-feedback'
+        : 'template.incorrect-feedback'
+    );
+
+    if (customFeedback) {
+      feedback.innerHTML = customFeedback.innerHTML;
+    } else {
+      const explanation = card.querySelector('template').innerHTML;
+
+      feedback.innerHTML =
+        (isCorrect
+          ? '<strong>Correct.</strong> '
+          : '<strong>Not quite.</strong> ')
+        + explanation;
+    }
+
+    update();
+  }
+
+  function clear(card) {
+    card.querySelectorAll('input').forEach(input => {
+      input.checked = false;
+    });
+
+    card.querySelectorAll('.option').forEach(option => {
+      option.classList.remove('correct', 'incorrect');
+    });
+
+    const feedback = card.querySelector('.feedback');
+    feedback.className = 'feedback';
+    feedback.textContent = '';
+
+    const questionId = Number(card.dataset.questionId);
+    checked.delete(questionId);
+    checkedQuestions.delete(questionId);
+
+    update();
+  }
+
+  document.querySelectorAll('.check-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      check(button.closest('.question-card'));
+    });
+  });
+
+  document.querySelectorAll('.reset-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      clear(button.closest('.question-card'));
+    });
+  });
+
+  document.querySelectorAll('.question-card').forEach(card => {
+    card.addEventListener('change', () => {
+      const questionId = Number(card.dataset.questionId);
+
+      checked.delete(questionId);
+      checkedQuestions.delete(questionId);
+
+      card.querySelectorAll('.option').forEach(option => {
+        option.classList.remove('correct', 'incorrect');
+      });
+
+      const feedback = card.querySelector('.feedback');
+      feedback.className = 'feedback';
+      feedback.textContent = '';
+
+      update();
+    });
+  });
+
+  document.getElementById('submitAll').addEventListener('click', () => {
+    document.querySelectorAll('.question-card').forEach(card => {
+      check(card);
+    });
+
+    resultBox.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest'
+    });
+  });
+
+  document.getElementById('resetAll').addEventListener('click', () => {
+    document.querySelectorAll('.question-card').forEach(clear);
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  update();
 })();
 </script>
 </body>
 </html>
+```
